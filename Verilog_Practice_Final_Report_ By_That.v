@@ -44,14 +44,14 @@ always @(*) begin
         7: HEX0=7'b0001111;
         8: HEX0=7'b0000000;
         9: HEX0=7'b0000100;
-        default: HEX0=7'b1111111: 
+        default: HEX0=7'b1111111;
     endcase
     case(chuc)
         0: HEX1=7'b0000001;
         1: HEX1=7'b1001111;
         2: HEX1=7'b0010010;
         3: HEX1=7'b0000110;
-        default: HEX0=7'b1111111:
+        default: HEX0=7'b1111111;
     endcase
 end
 endmodule
@@ -141,19 +141,19 @@ endmodule
 // switch = 2’b01 thì khoảng 2 Hz, switch = 2’b10 thì khoảng 4 Hz 
 // và switch = 2’b11 thì khoảng 8 Hz. 
 // Clock được lấy từxung clock 50MHz.
-module CAU6(input CLOCK_50Mhz, input [1:0] SW, output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4);
+module Verilog_Test(input CLOCK_50Mhz, input [1:0] SW, output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4);
 reg [25:0] freq;
 wire freq_point;
 always @(posedge CLOCK_50Mhz)
-    tanso <= tanso + 1'b1;
-assign freq_point = (SW == 2'b00) ? preq[25]:
-                    (SW == 2'b01) ? preq[24]:
-                    (SW == 2'b10) ? preq[23]: preq[22];
-assign HEX0 = (clock) ? 7'b0000001 : 7'b1111111;    //O
-assign HEX1 = (clock) ? 7'b1110001 : 7'b1111111;    //L
-assign HEX2 = (clock) ? 7'b1110001 : 7'b1111111;    //L
-assign HEX3 = (clock) ? 7'b0110000 : 7'b1111111;    //E
-assign HEX4 = (clock) ? 7'b1001000 : 7'b1111111;    //H
+    freq <= freq + 1'b1;
+assign freq_point = (SW == 2'b00) ? freq[25]:
+                    (SW == 2'b01) ? freq[24]:
+                    (SW == 2'b10) ? freq[23]: freq[22];
+assign HEX0 = (freq_point) ? 7'b0000001 : 7'b1111111;    //O
+assign HEX1 = (freq_point) ? 7'b1110001 : 7'b1111111;    //L
+assign HEX2 = (freq_point) ? 7'b1110001 : 7'b1111111;    //L
+assign HEX3 = (freq_point) ? 7'b0110000 : 7'b1111111;    //E
+assign HEX4 = (freq_point) ? 7'b1001000 : 7'b1111111;    //H
 endmodule
 
 //=================================================================//
