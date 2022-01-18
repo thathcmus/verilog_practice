@@ -92,7 +92,7 @@ reg [3:0] flag;
 reg [3:0] t;
 always @(posedge CLOCK_50Mhz)
     freq <= freq + 1'b1;
-always @(posedge tanso[25])
+always @(posedge freq[25])
     if (KEY[0:0] == 1)
         flag = 0;
     else
@@ -101,7 +101,7 @@ always @(posedge tanso[25])
 always @(posedge KEY[0:0])
     t = flag;
 
-always @(posedge tanso[25])
+always @(posedge freq[25])
 begin
     if(LEDR == 0)
         LEDR <= LEDR + 1'b1;
