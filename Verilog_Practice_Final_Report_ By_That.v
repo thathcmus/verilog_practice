@@ -119,7 +119,7 @@ endmodule
 
 // Câu 5: Thiết kế mạch dịch led sử dụng 8 led xanh với clock khoảng 1Hz được chia từ
 // clock 50Mhz sao cho 2 led chạy từ ngoài vào giữa.
-module CAU3(input CLOCK_50Mhz, output reg [7:0] LEDG);
+module CAU5(input CLOCK_50Mhz, output reg [7:0] LEDG);
 reg flag;
 reg [25:0] freq;
 always @(posedge CLOCK_50Mhz)
@@ -141,7 +141,7 @@ endmodule
 // switch = 2’b01 thì khoảng 2 Hz, switch = 2’b10 thì khoảng 4 Hz 
 // và switch = 2’b11 thì khoảng 8 Hz. 
 // Clock được lấy từxung clock 50MHz.
-module Verilog_Test(input CLOCK_50Mhz, input [1:0] SW, output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4);
+module CAU6(input CLOCK_50Mhz, input [1:0] SW, output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4);
 reg [25:0] freq;
 wire freq_point;
 always @(posedge CLOCK_50Mhz)
