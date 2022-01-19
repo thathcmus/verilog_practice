@@ -215,7 +215,7 @@ endmodule
 // Câu 8 : Thiết kếmạch hiển thịchữ “HI” dịch từ trái qua phải ở
 // 3 led 7 đoạn (từ HEX0 đến HEX3), xung clock khoảng 1Hz được chia từ clokc 50Mhz
 
-module CAU8(input CLOCK_50Mhz, output reg [0:6] HEX0, HEX1, HEX2);
+module CAU8(input CLOCK_50Mhz, output reg [0:6] HEX0, HEX1, HEX2, HEX3);
 reg [25:0] freq;
 reg [1:0] q;
 always @(posedge CLOCK_50Mhz)
