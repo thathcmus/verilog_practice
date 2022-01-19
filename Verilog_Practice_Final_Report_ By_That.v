@@ -192,7 +192,7 @@ always @(*)
             7: HEX1 = 7'b0001111;
             8: HEX1 = 7'b0000000;
             9: HEX1 = 7'b0000100;
-            default: HEX0 = 7'b1111111;
+            default: HEX1 = 7'b1111111;
         endcase
         case(tram)
             0: HEX2 = 7'b0000001;
@@ -205,7 +205,7 @@ always @(*)
             7: HEX2 = 7'b0001111;
             8: HEX2 = 7'b0000000;
             9: HEX2 = 7'b0000100;
-            default: HEX0 = 7'b1111111;
+            default: HEX2 = 7'b1111111;
         endcase
 end
 endmodule
@@ -323,5 +323,5 @@ always @(*)
             9: HEX2 = 7'b0000100;
             default: HEX2 = 7'b1111111;
         endcase
-end
+	end
 endmodule
