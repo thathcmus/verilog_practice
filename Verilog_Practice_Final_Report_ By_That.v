@@ -278,7 +278,7 @@ endmodule
 // Câu 10 : Thiết kếmạch bình phương 4 bit (sửdụngcác switch làm ngõ vào)
 // hiển thịra led 7 đoạn HEX2, HEX1, HEX0 dưới dạng sốthập phân
 module CAU10(input [3:0] SW, output reg [0:6] HEX0, HEX1, HEX2);
-reg [3:0] tram, chuc, donvi;
+reg [7:0] tram, chuc, donvi;
 always @(*)
     begin 
         donvi = (SW[3:0]*SW[3:0]) % 4'd10;
